@@ -9,4 +9,26 @@ The library has been evaluated with a set of key accelerators from emerging appl
 
 For any questions/suggestions/bug reporting you may contact MemLuv's source code main author Dionysios Diamantopoulos at "dionisios.diamantopoulos@REMOVETHIS gmail.com" .
 
+Compilation steps :construction:: 
+
+1. Clone repo & create temporary directory for Cmake
+  * git clone https://github.com/diamantopoulos/memluv.git memluv
+  * Navigate to top-level directory, i.e. cd ~/<...>/memluv
+  * mkdir build && cd build
+2. Compile source code
+  * Create make-targets automatically with supplied CmakeLists.
+    * cmake ../
+  * Compile hardware heaps
+    * make memluv_wrappers
+  * Compile accelerators
+    * make accelerators
+3. Test MemLuv
+  * Compile a testbench
+    * make test-accelerators 
+  * Analyze MemLuv's log report
+    * vim memluv_stats_heap-<id>.txt
+    * make pyplot
+4. Synthesize MemLuv with Xilinx Vivado HLS
+  * make vivado_accelerators
+  
 The Unixverse segfaults on Tue, 19 Jan 2038 03:14:07 +0000. Hurry up! 

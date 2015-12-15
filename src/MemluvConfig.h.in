@@ -1,0 +1,3 @@
+// the configured options and settings for MEMLUV
+#define MEMLUV_VERSION_MAJOR @MEMLUV_VERSION_MAJOR@
+#define MEMLUV_VERSION_MINOR @MEMLUV_VERSION_MINOR@

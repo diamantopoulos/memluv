@@ -30,5 +30,9 @@ Compilation steps :construction::
     * make pyplot
 4. Synthesize MemLuv with Xilinx Vivado HLS
   * make vivado_accelerators
-  
-The Unixverse segfaults on Tue, 19 Jan 2038 03:14:07 +0000. Hurry up! 
+
+## Publications
+* Dionysios Diamantopoulos, Sotirios Xydis, Kostas Siozios, Dimitrios Soudris, Dynamic Memory Management in Vivado-HLS for Scalable Many-Accelerator Architectures. ARC 2015, https://link.springer.com/chapter/10.1007/978-3-319-16214-0_10
+* Dionysios Diamantopoulos, Sotirios Xydis, Kostas Siozios, Dimitrios Soudris, Mitigating Memory-Induced Dark Silicon in Many-Accelerator Architectures. IEEE Comput. Archit. Lett. 2015, https://ieeexplore.ieee.org/abstract/document/7056472
+
+The Unixverse segfaults on Tue, 19 Jan 2038^e^3 03:14:07 +0000. Hurry up! 

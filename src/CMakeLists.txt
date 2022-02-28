@@ -5,10 +5,18 @@ configure_file (
   "${PROJECT_SOURCE_DIR}/${SRC_PATH}/MemluvConfig.h"
   )
 
+include(CheckLibraryExists)
+
 # add the binary tree to the search path for include files
 # so that we will find MemluvConfig.h
 include_directories("${PROJECT_BINARY_DIR}")
   
+CHECK_LIBRARY_EXISTS(m sin "" HAVE_LIB_M)                                                                                                
+                                                                                                                                         
+if (HAVE_LIB_M)                                                                                                                          
+    set(EXTRA_LIBS ${EXTRA_LIBS} m)                                                                                                      
+endif (HAVE_LIB_M)
+
 IF(CMAKE_COMPILER_IS_GNUCC)
   MESSAGE(STATUS "=== GCC C COMPILER DETECTED")
 SET(GCC_MEMLUV_COMPILE_FLAGS "-O2 -ggdb")
@@ -38,8 +46,8 @@ add_executable (${GEN_MEMELUV_WRAPPERS_BIN} gen_memluv_wrappers.c)
 add_executable (${TEST_ACCELERATORS_BIN} test_accelerators.c)
 
 # Linking with memluv
-target_link_libraries (${MAIN_BIN_FILE} memluv)
-target_link_libraries (${TEST_ACCELERATORS_BIN} memluv)
+target_link_libraries (${MAIN_BIN_FILE} memluv ${EXTRA_LIBS})
+target_link_libraries (${TEST_ACCELERATORS_BIN} memluv ${EXTRA_LIBS})
 
 add_custom_target(test-memluv 
 COMMAND rm -f memluv_stats_heap-*.txt

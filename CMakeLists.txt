@@ -17,7 +17,7 @@ endif(OBFUSCATOR)
 
 ADD_SUBDIRECTORY (${SRC_PATH})
 ADD_SUBDIRECTORY (etc)
-ADD_SUBDIRECTORY (apps/playground)
+#ADD_SUBDIRECTORY (apps/playground)
 ADD_SUBDIRECTORY (apps/mibench/network/dijkstra/)
 
 
